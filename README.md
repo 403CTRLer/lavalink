@@ -2,7 +2,7 @@
 
 **Lavalink** on **Heroku**, in a nutshell
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/F4stZ4p/HLavalink)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Gaming-Rowdies/lavalink)
 
 ## If you want to run this:
 
@@ -36,7 +36,7 @@
 - [x] **Wavelink** | **[Repo Link](https://github.com/EvieePy/Wavelink)**
 ```python
 async def initiate_nodes(self):
-    nodes = {"MAIN": 
+    nodes = {"MAIN":
         {
             "host": "test-lavalink.herokuapp.com",
             "port": 80,
@@ -56,12 +56,12 @@ async def initiate_nodes(self):
     self.bot.lavalink = lavalink.Client(
         self.bot.user.id
     )
-    
+
     self.bot.lavalink.add_node(
-        "test-lavalink.herokuapp.com", 
-        80, 
-        "youshallnotpass", 
-        "eu", 
+        "test-lavalink.herokuapp.com",
+        80,
+        "youshallnotpass",
+        "eu",
         "default-node"
     )  # Host, Port, Password, Region, Name
     # ...
