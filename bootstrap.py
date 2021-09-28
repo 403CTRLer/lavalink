@@ -7,7 +7,7 @@ class LavalinkBootstrap:
 
         self._version_number = self.prepare_version_number()
 
-        self.download_command = f"curl -L https://ci.fredboat.com/repository/download/Lavalink_Build/{self._version_number}/Lavalink.jar?guest=1 -O"
+        self.download_command = f"curl -L https://ci.fredboat.com/repository/download/Lavalink_Build/{self._version_number}:id/Lavalink.jar?guest=1 -O"
         print(f"[INFO] Download command: {self.download_command}")
 
         self.replace_port_command = 'sed -i "s|DYNAMICPORT|$PORT|" application.yml'
@@ -37,7 +37,9 @@ class LavalinkBootstrap:
         )
 
         build = builds[1][builds[1].find(">") + 1 :] #getting latest build
-        return build
+        for build in builds:
+            if "tcbuildid" in builds:
+                return build[build.find(">") + 1: build.find(".")]
 
 
     def replace_password_and_port(self):
